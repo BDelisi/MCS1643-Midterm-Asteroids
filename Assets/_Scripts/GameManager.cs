@@ -30,17 +30,15 @@ public class GameManager : MonoBehaviour
     private int score;
     private float zoneSizeX;
     private float zoneSizeZ = 25;
-    // Start is called before the first frame update
+
     void Start()
     {
         zoneSizeX = (float) Screen.width /Screen.height * zoneSizeZ;
-        //Debug.Log(Screen.width + " " + Screen.height + " " + zoneSizeX);
         moveTeleportBoxes();
         SpawnAllAsteriods();
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         livesCountTMP.text = $"Lives: {startingLives}";
