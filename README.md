@@ -16,13 +16,13 @@
 
 <br>
 
-1. **What are the controls to your game? How do we play?**
+1. **What are the controls to your game? How do we play?** <br>
 To move the ship forward, you must press the w key. To turn the ship side to side you must press the a and d keys to turn it left and right respectively. You may also press the shoot projectiles. If you hit the asteroid with a projectile it will break the asteroid into pieces if it is not a small asteroid. If your ship collides into a projectile or an asteroid you take damage and your ship becomes immune for half a second.
 
 
 <br>
 
-2. **What creative additions did you make? How can we find them?**
+2. **What creative additions did you make? How can we find them?** <br>
 I added the shield to the ship so you cant take damage multiple times in a second. I also made it so the projectiles last much longer than they do in ASTEROIDS and gave them the ability to hit the ship. I also added a pretty creative solution to my issue of the game not looking right when you change the screen size. Now it will work no matter the aspect ratio. Though it does get much more difficult the slimmer the screen.
 
 
@@ -41,30 +41,30 @@ Font used: https://www.dafont.com/alpha-prota.font?l[]=10&text=ASTEROIDS <br>
 
 <br>
 
-4. **Did you receive help from anyone outside this class?** <br> (list their names and what they helped with)
+4. **Did you receive help from anyone outside this class?** <br> (list their names and what they helped with) <br>
 No I did all of it on my own.
 
 
 <br>
 
-5. **Did you get help from any AI Code Assistants?** <br> (Tell us which .cs file to look in for the citation and describe what you learned)
+5. **Did you get help from any AI Code Assistants?** <br> (Tell us which .cs file to look in for the citation and describe what you learned) <br>
 Besides the AI just finishing the lines I was already going to type no I did not get any assistance.
 
 
 <br>
 
-6. **Did you get help from any online websites, videos, or tutorials?** <br> (link them here)
+6. **Did you get help from any online websites, videos, or tutorials?** <br> (link them here) <br>
 https://discussions.unity.com/
 
 <br>
 
-7. **What trouble did you have with this project?**
+7. **What trouble did you have with this project?** <br>
 I had trouble fixing a few bugs that came up with trying to teleport the asteroids across the screen. I also had many issues with the trail renderer. I also had issues balancing the difficulty of the game. There were also issues with ensuring that the size of the screen would not cause problems.
 
 
 <br>
 
-8. **Is there anything else we should know?**
+8. **Is there anything else we should know?** <br>
 
 
 
