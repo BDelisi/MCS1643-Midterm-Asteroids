@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Ship : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class Ship : MonoBehaviour
     public KeyCode shoot;
     public float speed;
     public float rotationSpeed;
+    public float invincibility;
     public GameObject projectile;
+    public GameObject shipModel;
+    public GameObject shield;
 
     void Update()
     {
@@ -36,7 +40,17 @@ public class Ship : MonoBehaviour
                 Instantiate(projectile, transform.position + transform.rotation * new Vector3(0, 0, 2.5f), transform.rotation);
             }
         }
-        //trail.transform.position = transform.position + transform.rotation * new Vector3(0, 0, -1f);
+
+        if (invincibility > 0)
+        {
+            shield.SetActive(true);
+            invincibility -= Time.deltaTime;
+            if (invincibility < 0)
+            {
+                invincibility = 0;
+                shield.SetActive(false);
+            }
+        }
     }
 
     public void updateTrail()
@@ -44,16 +58,17 @@ public class Ship : MonoBehaviour
         if (trail.GetComponent<TrailRenderer>() != null)
         {
             TrailRenderer trailRenderer = trail.GetComponent<TrailRenderer>();
-            //trail.transform.position = transform.position + transform.rotation * new Vector3(0, 0, -1f);
             trailRenderer.Clear();
         }
     }
 
     public void damageTaken(int lives)
     {
+        invincibility = .5f;
         if (lives <= 0)
         {
             Destroy(gameObject);
         }
     }
+
 }

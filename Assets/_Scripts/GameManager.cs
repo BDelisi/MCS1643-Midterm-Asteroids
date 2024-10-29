@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEngine.ParticleSystem;
 
 public class GameManager : MonoBehaviour
@@ -17,10 +18,14 @@ public class GameManager : MonoBehaviour
     public GameObject teleportBoxB;
     public TextMeshProUGUI livesCountTMP;
     public TextMeshProUGUI scoreTMP;
+    public TextMeshProUGUI gameOverTMP;
+    public TextMeshProUGUI gameOverScoreTMP;
+    public GameObject restartButton;
     public int startingLives;
     public int large;
     public int medium;
     public int small;
+    public float spawnOffset;
     private int asteriodsLeft;
     private int score;
     private float zoneSizeX;
@@ -41,16 +46,18 @@ public class GameManager : MonoBehaviour
         livesCountTMP.text = $"Lives: {startingLives}";
         scoreTMP.text = $"Score: {score}";
     }
-    
+
     public void TakeDamage()
     {
-        startingLives--;
-        ship.GetComponent<Ship>().damageTaken(startingLives);
-        GameObject temp = Instantiate(shipParticles, ship.transform.position, Quaternion.Euler(-90f, 0f, 0f));
-        Destroy(temp, .5f);
-        if (startingLives <= 0)
-        {
-            gameOver();
+        if (ship.GetComponent<Ship>().invincibility <= 0) {
+            startingLives--;
+            ship.GetComponent<Ship>().damageTaken(startingLives);
+            GameObject temp = Instantiate(shipParticles, ship.transform.position, Quaternion.Euler(-90f, 0f, 0f));
+            Destroy(temp, .5f);
+            if (startingLives <= 0)
+            {
+                gameOver();
+            }
         }
     }
 
@@ -120,11 +127,11 @@ public class GameManager : MonoBehaviour
         int side = (Random.Range(0, 2) * 2) - 1;
         if (Random.Range(0, 2) == 1)
         {
-            Instantiate(asteroid, new Vector3(Random.Range(-zoneSizeX, zoneSizeX), 0, zoneSizeZ * side), Quaternion.identity);
+            Instantiate(asteroid, new Vector3(Random.Range(-zoneSizeX + spawnOffset, zoneSizeX - spawnOffset), 0, (zoneSizeZ - spawnOffset) * side), Quaternion.identity);
         }
         else
         {
-            Instantiate(asteroid, new Vector3(zoneSizeX * side, 0, Random.Range(-zoneSizeZ, zoneSizeZ)), Quaternion.identity);
+            Instantiate(asteroid, new Vector3((zoneSizeX - spawnOffset) * side, 0, Random.Range(-zoneSizeZ + spawnOffset, zoneSizeZ - spawnOffset)), Quaternion.identity);
         }
         asteriodsLeft++;
     }
@@ -145,8 +152,11 @@ public class GameManager : MonoBehaviour
     {
         destroyAll("Projectile");
         destroyAll("Asteroid");
-        livesCountTMP.GetComponent<GameObject>().SetActive(false);
-        scoreTMP.GetComponent<GameObject>().SetActive(false);
-
+        gameOverScoreTMP.text = $"You Scored: {score}";
+        livesCountTMP.gameObject.SetActive(false);
+        scoreTMP.gameObject.SetActive(false);
+        gameOverTMP.gameObject.SetActive(true);
+        restartButton.SetActive(true);
+        gameOverScoreTMP.gameObject.SetActive(true);
     }
 }

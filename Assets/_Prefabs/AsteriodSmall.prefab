@@ -122,8 +122,8 @@ MonoBehaviour:
   smallerAsteroid: {fileID: 7370782211644990135}
   particles: {fileID: 6347174642431607444, guid: b67d455f759db7d4582a775c3c4d3a53, type: 3}
   isSmallest: 1
-  startSpeedMin: 10
-  startSpeedMax: 14
+  startSpeedMin: 11
+  startSpeedMax: 15
   particleSize: 0
   pointsGained: 100
 --- !u!54 &-143344561984954517
