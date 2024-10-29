@@ -28,14 +28,14 @@ I added the shield to the ship so you cant take damage multiple times in a secon
 
 <br>
 
-3. **Any assets used that you didn't create yourself?** <br> (art, music, etc. Just tell us where you got it, link it here)
-Background music: https://www.bensound.com/royalty-free-music/track/motion-reflective-wide
-Explosion sound: https://freesound.org/people/DeVern/sounds/517664/
-Shoot sound: https://freesound.org/people/V-ktor/sounds/435417/
-Asteroid models: https://assetstore.unity.com/packages/3d/environments/asteroids-pack-84988
-Spaceship model. https://assetstore.unity.com/packages/3d/environments/sci-fi/lowpoly-spaceship-183012
-Skybox: https://assetstore.unity.com/packages/2d/textures-materials/sky/starfield-skybox-92717
-Font used: https://www.dafont.com/alpha-prota.font?l[]=10&text=ASTEROIDS
+3. **Any assets used that you didn't create yourself?** <br> (art, music, etc. Just tell us where you got it, link it here) <br>
+Background music: https://www.bensound.com/royalty-free-music/track/motion-reflective-wide <br>
+Explosion sound: https://freesound.org/people/DeVern/sounds/517664/ <br>
+Shoot sound: https://freesound.org/people/V-ktor/sounds/435417/ <br>
+Asteroid models: https://assetstore.unity.com/packages/3d/environments/asteroids-pack-84988 <br>
+Spaceship model. https://assetstore.unity.com/packages/3d/environments/sci-fi/lowpoly-spaceship-183012 <br>
+Skybox: https://assetstore.unity.com/packages/2d/textures-materials/sky/starfield-skybox-92717 <br> 
+Font used: https://www.dafont.com/alpha-prota.font?l[]=10&text=ASTEROIDS <br>
 
 
 
