@@ -30,29 +30,29 @@ public class Asteroids : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Projectile"))
         {
-            gameManager.GetComponent<GameManager>().gainPoints(pointsGained);
+            gameManager.GetComponent<GameManager>().GainPoints(pointsGained);
             if (!isSmallest)
             {
                 Instantiate(smallerAsteroid, transform.position, Quaternion.identity);
                 Instantiate(smallerAsteroid, transform.position, Quaternion.identity);
-                gameManager.GetComponent<GameManager>().asteroidsSpawned(2);
+                gameManager.GetComponent<GameManager>().AsteroidsSpawned(2);
                 
             }
-            destroyThis();
+            DestroyThis();
         }
         else if (other.gameObject.CompareTag("Ship"))
         {
 
             gameManager.GetComponent<GameManager>().TakeDamage();
-            destroyThis();
+            DestroyThis();
         }
 
     }
 
-    public void destroyThis()
+    public void DestroyThis()
     {
         GameObject temp = Instantiate(particles, transform.position, Quaternion.Euler(-90f, 0f, 0f));
-        gameManager.GetComponent<GameManager>().asteroidDestroyed();
+        gameManager.GetComponent<GameManager>().AsteroidDestroyed();
         Destroy(temp, .5f);
         Destroy(gameObject);
     }

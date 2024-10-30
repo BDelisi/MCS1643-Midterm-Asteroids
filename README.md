@@ -65,7 +65,7 @@ I had trouble fixing a few bugs that came up with trying to teleport the asteroi
 <br>
 
 8. **Is there anything else we should know?** <br>
-
+Nope! That was about it!
 
 
 

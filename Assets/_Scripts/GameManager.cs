@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public int medium;
     public int small;
     public float spawnOffset;
-    private int asteriodsLeft;
+    public int asteriodsLeft;
     private int score;
     private float zoneSizeX;
     private float zoneSizeZ = 25;
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         zoneSizeX = (float) Screen.width /Screen.height * zoneSizeZ;
-        moveTeleportBoxes();
+        MoveTeleportBoxes();
         SpawnAllAsteriods();
 
     }
@@ -49,12 +49,12 @@ public class GameManager : MonoBehaviour
     {
         if (ship.GetComponent<Ship>().invincibility <= 0) {
             startingLives--;
-            ship.GetComponent<Ship>().damageTaken(startingLives);
+            ship.GetComponent<Ship>().DamageTaken(startingLives);
             GameObject temp = Instantiate(shipParticles, ship.transform.position, Quaternion.Euler(-90f, 0f, 0f));
             Destroy(temp, .5f);
             if (startingLives <= 0)
             {
-                gameOver();
+                GameOver();
             }
         }
     }
@@ -75,16 +75,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void gainPoints(int points)
+    public void GainPoints(int points)
     {
         score += points;
     }
 
-    public void asteroidsSpawned(int amount)
+    public void AsteroidsSpawned(int amount)
     {
         asteriodsLeft += amount;
     }
-    public void asteroidDestroyed()
+    public void AsteroidDestroyed()
     {
         asteriodsLeft--;
         if (asteriodsLeft <= 0 )
@@ -105,13 +105,13 @@ public class GameManager : MonoBehaviour
             }
             small++;
 
-            destroyAll("Projectile");
+            DestroyAll("Projectile");
             SpawnAllAsteriods();
             startingLives++;
         }
     }
 
-    public void destroyAll(string theTag)
+    public void DestroyAll(string theTag)
     {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag(theTag);
         foreach (GameObject obj in allObjects)
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
         asteriodsLeft++;
     }
 
-    private void moveTeleportBoxes()
+    private void MoveTeleportBoxes()
     {
         teleportBoxR.transform.position = new Vector3(zoneSizeX + 10, 0, 0);
         teleportBoxL.transform.position = new Vector3(-(zoneSizeX + 10), 0, 0);
@@ -146,10 +146,10 @@ public class GameManager : MonoBehaviour
         teleportBoxB.transform.localScale = new Vector3((2 * zoneSizeX) + 30, 25, 10);
     }
 
-    private void gameOver()
+    private void GameOver()
     {
-        destroyAll("Projectile");
-        destroyAll("Asteroid");
+        DestroyAll("Projectile");
+        DestroyAll("Asteroid");
         gameOverScoreTMP.text = $"You Scored: {score}";
         livesCountTMP.gameObject.SetActive(false);
         scoreTMP.gameObject.SetActive(false);

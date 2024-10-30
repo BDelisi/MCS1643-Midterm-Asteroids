@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartButton: MonoBehaviour
 {
-    public void onClick()
+    public void OnClick()
     {
         SceneManager.LoadScene("__Asteroids");
     }

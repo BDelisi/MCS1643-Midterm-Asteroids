@@ -53,7 +53,7 @@ public class Ship : MonoBehaviour
         }
     }
 
-    public void updateTrail()
+    public void UpdateTrail()
     {
         if (trail.GetComponent<TrailRenderer>() != null)
         {
@@ -62,7 +62,7 @@ public class Ship : MonoBehaviour
         }
     }
 
-    public void damageTaken(int lives)
+    public void DamageTaken(int lives)
     {
         invincibility = .5f;
         if (lives <= 0)

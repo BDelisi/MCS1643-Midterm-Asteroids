@@ -14,7 +14,7 @@ public class TeleportBox : MonoBehaviour
         {
             other.transform.position = Vector3.Scale(teleportSide, other.transform.position) + (offset * offsetSide);
 
-            other.GetComponent<Ship>().updateTrail();
+            other.GetComponent<Ship>().UpdateTrail();
 
         } else
         {
